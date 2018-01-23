@@ -1,7 +1,7 @@
 ##
 # NodeJS with Swagger executables
 ##
-FROM node:9.4.0
+FROM node:9.4
 
 RUN npm install -g swagger
 
