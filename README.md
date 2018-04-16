@@ -24,3 +24,6 @@ git push origin :refs/tags/latest
 git tag --list
 git push --tags
 ```
+
+#### EXAMPLE: build the docker image
+docker build -t remstef/node-swagger:latest .
