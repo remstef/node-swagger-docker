@@ -28,11 +28,14 @@ echo "Updating nodejs version to ${v}"
 echo "Updating Dockerfile..."
 cat Dockerfile.template | sed s/VERSION/${v}/ > Dockerfile
 
+echo "Commit Dockerfile..."
+git commit Dockerfile -m "Update Dockerfile to version ${v}"
+
 echo "Creating tag..."
 git tag -f "${v}"
 
-echo "Pushing tags..."
-git push --tags
+echo "Pushing..."
+git push && git push --tags
 
 echo "Pushed new docker version. Please check automated builds in docker hub manually!"
 echo "If necessary, manually run:"

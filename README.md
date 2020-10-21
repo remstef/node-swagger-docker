@@ -1,29 +1,11 @@
 # node-swagger-docker
 
-#### EXAMPLE: change to version 9.4.0 (change version in Dockerfile)
+This docker extends node js docker images and adds swagger and some convenience commands to the image.
+
+
+#### update a new tagged version in git repository
 ```
-# check existing tags
-git tag --list
+./updateNewVersion.sh 14.14.0
 ```
 
-```
-# edit Dockerfile, commit and create tag locally
-git commit . -m 'node 9.4.0'
-git tag "9.4.0"
-```
-
-```
-# change version in Dockerfile to latest and overwrite tag 'latest'
-git commit . -m 'node latest'
-git tag -f "latest"
-git push origin :refs/tags/latest
-```
-
-```
-# push tags
-git tag --list
-git push --tags
-```
-
-#### EXAMPLE: build the docker image
-docker build -t remstef/node-swagger:latest .
+This additionally invokes automatic builds in Docker Hub and creates a new image with the respective tag and node version.
