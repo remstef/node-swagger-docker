@@ -1,7 +1,7 @@
 ##
 # NodeJS with Swagger executables
 ##
-FROM node:14.14.0
+FROM node:14.14
 
 RUN npm install -g swagger
 
