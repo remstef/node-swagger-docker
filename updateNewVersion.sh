@@ -38,5 +38,3 @@ echo "Pushing..."
 git push && git push --tags
 
 echo "Pushed new docker version. Please check automated builds in docker hub manually!"
-echo "If necessary, manually run:"
-echo " "curl -H \"Content-Type: application/json\" --data \"{\'source_type\': \'Tag\', \'source_name\': \'${v}\'}\" -X POST https://registry.hub.docker.com/u/remstef/node-swagger/trigger/e3846c99-664e-473a-a10f-ad8e9bce4aaa/
