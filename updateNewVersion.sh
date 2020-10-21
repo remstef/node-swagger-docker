@@ -2,7 +2,7 @@
 
 if [ -z $1 ]
 then
-  echo Please specify a version number! ... cancelling
+  echo Please specify a node version number... cancelling
   exit 1
 fi
 
@@ -14,7 +14,7 @@ then
   read -p "[Y/N]: " decision
   if ! [[ ${decision} = "Y" || ${decision} = "y" ]]
   then
-    echo "... cancelling"
+    echo "... cancelled"
     exit 1
   fi
   echo "Removing local tag..."
@@ -31,7 +31,7 @@ cat Dockerfile.template | sed s/VERSION/${v}/ > Dockerfile
 echo "Creating tag..."
 git tag -f "${v}"
 
-echo "Push tags..."
+echo "Pushing tags..."
 git push --tags
 
 echo "Pushed new docker version. Please check automated builds in docker hub manually!"
